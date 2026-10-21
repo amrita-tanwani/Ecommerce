@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: hsl(30 33% 95%);
+  --color-foreground: hsl(20 18% 18%);
+  --color-primary: hsl(16 38% 58%);
+  --color-primary-foreground: hsl(30 33% 97%);
+  --color-muted-foreground: hsl(20 10% 46%);
+  --color-border: hsl(26 20% 85%);
+  --color-card: hsl(24 32% 89%);
+
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+:root {
+  --background: hsl(30, 33%, 95%);       /* cream */
+  --foreground: hsl(20, 18%, 18%);       /* deep cocoa */
+  --primary: hsl(16, 38%, 58%);          /* terracotta clay */
+  --primary-foreground: hsl(30, 33%, 97%);
+  --muted-foreground: hsl(20, 10%, 46%);
+  --border: hsl(26, 20%, 85%);
+  --card: hsl(24, 32%, 89%);             /* blush clay panel */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Typography Utility Classes matching strict specs */
+.font-display-h1 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(56px, 9vw, 140px);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+}
+
+.font-display-h2 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 1;
+}
+
+.font-label {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Hide Scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
